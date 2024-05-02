@@ -36,7 +36,7 @@ void addDistances(DM dmObj, DB dbObj) {
     float dbInInches = dbObj.feet * 12 + dbObj.inches;
     float totalDistance = dmInCentimeters + dbInInches;
 
-    int totalMeters = (totalDistance / 100);
+    int totalMeters = totalDistance / 100;
     float remainingCentimeters = totalDistance - totalMeters * 100;
 
     cout << "Total Distance: " << totalMeters << " meters and " << remainingCentimeters << " centimeters" << endl;
