@@ -10,8 +10,11 @@ private:
     float ac_bal;
 
 public:
-    Account(string acc_name, int acc_no, string acc_type, float acc_bal) 
-        : ac_name(acc_name), ac_num(acc_no), ac_type(acc_type), ac_bal(acc_bal) {
+    Account(string acc_name, int acc_no, string acc_type, float acc_bal) {
+        ac_num = acc_no;
+        ac_name = acc_name;
+        ac_type = acc_type;
+        ac_bal = acc_bal;
     }
 
     void deposit(float amt) {
@@ -32,7 +35,7 @@ public:
         }
     }
 
-    void display_info() const {
+    void display_info() {
         cout << "Depositor name: " << ac_name << endl;
         cout << "Account number: " << ac_num << endl;
         cout << "Account type: " << ac_type << endl;
