@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int* p = nullptr;
+    p = new (nothrow) int;
+    if (!p) {
+        cout << "Allocation of memory failed\n";
+    } else {
+        *p = 3335;
+        cout << "Value of p: " << *p << endl;
+        delete p;
+    }
+
+    float* r = new float(33.35);
+    cout << "Value of r: " << *r << endl;
+    delete r;
+
+    int n = 7;
+    int* q = new (nothrow) int[n];
+    if (!q) {
+        cout << "Allocation of memory failed\n";
+    } else {
+        for (int i = 0; i < n; i++) {
+            q[i] = i + 1;
+        }
+        cout << "Values stored in block of memory: ";
+        for (int i = 0; i < n; i++) {
+            cout << q[i] << " ";
+        }
+        delete[] q;
+    }
+
+    return 0;
+}

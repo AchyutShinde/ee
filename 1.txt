@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class newarea {
+    public:
+    int area(int side){
+        return (side*side);
+        }
+    int area(int length, int breadth){
+        return (0.5*length*breadth);
+        }
+    float area(float radius){
+        return (3.14*radius*radius);
+        }
+    float area(float base, float height){
+        return (0.5*base*height);
+        }
+    float area(float tbase1, float tbase2, float theight){
+        return (0.5*tbase1*tbase2*theight);
+        }
+};
+int main(){
+    int side, length, breadth;
+    float radius, base, height, tbase1, tbase2, theight;
+    cout<<"Enter side of square:";
+    cin>>side;
+    cout<<"Enter length and breadth of rectangle:";
+    cin>>length>>breadth;
+    cout<<"Enter radius of circle:";
+    cin>>radius;
+    cout<<"Enter base and height of triangle:";
+    cin>>base>>height;
+    cout<<"Enter parallel sides and height of trapezium:";
+    cin>>tbase1>>tbase2>>theight;
+    newarea a1;
+    cout<<"\nThe area of square is :"<<a1.area(side);
+    cout<<"\nThe area of rectangle is :"<<a1.area(length, breadth);
+    cout<<"\nThe area of circle is :"<<a1.area(radius);
+    cout<<"\nThe area of triangle is :"<<a1.area(base, height);
+    cout<<"\nThe area of trapezium is :"<<a1.area(tbase1, tbase2, theight);
+    return 0;
+}

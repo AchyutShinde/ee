@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+
+class parent
+{
+public:
+    virtual void accept() = 0;
+    virtual void display() = 0;
+};
+
+class child1 : public parent
+{
+private:
+    int bid, bprice;
+    char bname[20], publication[10], author[20];
+
+public:
+    void accept()
+    {
+        cout << "\nEnter book id: ";
+        cin >> bid;
+        cout << "Enter book name: ";
+        cin >> bname;
+        cout << "Enter book publication: ";
+        cin >> publication;
+        cout << "Enter book Author: ";
+        cin >> author;
+        cout << "Enter book price: ";
+        cin >> bprice;
+    }
+
+    void display()
+    {
+        cout << "\nBook id: " << bid;
+        cout << "\nBook name: " << bname;
+        cout << "\nBook publication: " << publication;
+        cout << "\nBook Author: " << author;
+        cout << "\nBook price: " << bprice;
+    }
+};
+
+class child2 : public parent
+{
+private:
+    int cprice;
+    char title[20];
+
+public:
+    void accept()
+    {
+        cout << "\nEnter CD Title: ";
+        cin >> title;
+        cout << "Enter CD price: ";
+        cin >> cprice;
+    }
+
+    void display()
+    {
+        cout << "\nCD Title: " << title;
+        cout << "\nCD price: " << cprice;
+    }
+};
+
+int main()
+{
+    child1 b;
+    child2 c;
+
+    cout << "\n===== Enter Information for Book =====\n";
+    b.accept();
+
+    cout << "\n===== Enter Information for CD =====\n";
+    c.accept();
+
+    cout << "\n============= Information of Book and CD =============\n";
+    b.display();
+    c.display();
+
+    return 0;
+}

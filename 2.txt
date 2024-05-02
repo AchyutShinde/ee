@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+private:
+    int ac_num;
+    string ac_name;
+    string ac_type;
+    float ac_bal;
+
+public:
+    Account(string acc_name, int acc_no, string acc_type, float acc_bal) 
+        : ac_name(acc_name), ac_num(acc_no), ac_type(acc_type), ac_bal(acc_bal) {
+    }
+
+    void deposit(float amt) {
+        if (amt > 0) {
+            ac_bal += amt;
+            cout << "Deposit of " << amt << " successful!" << endl;
+        } else {
+            cout << "Invalid deposit amount!" << endl;
+        }
+    }
+
+    void withdraw(float amt) {
+        if (amt > 0 && amt <= ac_bal) {
+            ac_bal -= amt;
+            cout << "Withdrawal of " << amt << " successful!" << endl;
+        } else {
+            cout << "Invalid withdrawal amount!" << endl;
+        }
+    }
+
+    void display_info() const {
+        cout << "Depositor name: " << ac_name << endl;
+        cout << "Account number: " << ac_num << endl;
+        cout << "Account type: " << ac_type << endl;
+        cout << "Balance: Rs. " << ac_bal << endl;
+        cout << endl;
+    }
+};
+
+int main() {
+    Account myaccount("Achyut Shinde", 1234, "Savings", 89569.54);
+    myaccount.display_info();
+    myaccount.deposit(500.0);
+    myaccount.display_info();
+    myaccount.withdraw(200.0);
+    myaccount.display_info();
+    return 0;
+}

@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Vector {
+private:
+    int size;
+    int* coord;
+
+public:
+    Vector();
+    void modify();
+    void display();
+    void multiply();
+};
+
+Vector::Vector() {
+    cout << "\nEnter Number of Coordinates: ";
+    cin >> size;
+    coord = new int[size];
+    cout << "\nEnter " << size << " Coordinates:\n";
+    for (int i = 0; i < size; i++) {
+        cout << " ";
+        cin >> coord[i];
+    }
+}
+
+void Vector::modify() {
+    cout << endl << "\nEnter " << size << " New Coordinates:\n";
+    for (int i = 0; i < size; i++) {
+        cout << " ";
+        cin >> coord[i];
+    }
+}
+
+void Vector::multiply() {
+    int num;
+    cout << endl << "\nEnter Number to Multiply: ";
+    cin >> num;
+    for (int i = 0; i < size; i++) {
+        coord[i] = coord[i] * num;
+    }
+}
+
+void Vector::display() {
+    cout << "\nVector: (";
+    for (int i = 0; i < size; i++) {
+        cout << coord[i];
+        if (i != size - 1)
+            cout << ",";
+    }
+    cout << ")";
+}
+
+int main() {
+    Vector v;
+    v.display();
+    v.modify();
+    v.display();
+    v.multiply();
+    v.display();
+    return 0;
+}
